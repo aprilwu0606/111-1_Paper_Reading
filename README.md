@@ -70,8 +70,8 @@ hist = msft.history(period="1y")
 ```
 ><strong>Step2:definition V0</strong>
 >
->因為事後視窗為3倍，因此將V0定義為累積交易量的1/4。
->p.s V0為罕見事件發生的前幾筆資料，
+>因為事後視窗為3倍，因此將V0定義為累積交易量的1/4。\
+>p.s V0為罕見事件發生的前數筆資料，
 ```python
 V_Total = hist["Volume"].sum()
 V0 = V_Total/4
