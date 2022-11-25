@@ -69,6 +69,7 @@ msft.info
 hist = msft.history(period="1y")
 ```
 ><strong>Step2:definition V0</strong> \
+>
 >因為事後視窗為3倍，因此將V0定義為累積交易量的1/4。
 ```python
 V_Total = hist["Volume"].sum()
@@ -77,7 +78,8 @@ V0 = V_Total/4
 V0
 
 ```
-><strong>Step3:依據公式(1)找出最大價差的金額與發生的時間點</strong>\
+><strong>Step3:依據公式(1)找出最大價差的金額與發生的時間點</strong>
+>
 >找出最大價差（價差由大到小排序後的最大值）是負的，代表我股價處於一直下跌的情況。\
 dp< x代表的含義就是，我要從價格下降幅度最大的罕見事件買進，並進行事後分析。
 ```python
@@ -122,10 +124,11 @@ Q_df = pd.DataFrame(dic2)
 Q_df
 
 ```
-><strong>Step4:依據公式(2)找出罕見事件</strong>\
+><strong>Step4:依據公式(2)找出罕見事件</strong>
+>
 >設alpha=0.05。\
-論文提及須找出一個x，使得prob(max_dp < x)時發生的機率<= alpha\
-這裡使用max_dp由小至大做排序，取前5%(alpha=0.05)的資料筆數，當作我的罕見事件
+>論文提及須找出一個x，使得prob(max_dp < x)時發生的機率<= alpha\
+>這裡使用max_dp由小至大做排序，取前5%(alpha=0.05)的資料筆數，當作我的罕見事件
 ```python
 alpha = 0.05
 
@@ -141,9 +144,9 @@ Q_df2 = Q_df1.iloc[:12,:].reset_index() # 取前5%(alpha=0.05)的資料筆數，
 Q_df2
 
 ```
-><strong>Step5:分析事後視窗，並印出報酬率和機率的表格與圖表</strong>\
+><strong>Step5:分析事後視窗，並印出報酬率和機率的表格與圖表</strong>
+>
 >依據罕見事件發生的日期(共12筆)去畫圖\
-
 >x軸為事後視窗大小(1, 2 ,3 倍)\
 >Y軸為報酬率和機率
 ```python
