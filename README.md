@@ -68,7 +68,7 @@ msft.info
 # get historical market data
 hist = msft.history(period="1y")
 ```
-><strong>Step2:definition V0</strong> \
+><strong>Step2:definition V0</strong>
 >
 >因為事後視窗為3倍，因此將V0定義為累積交易量的1/4。
 ```python
