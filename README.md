@@ -20,7 +20,7 @@
 • 分析這些罕見事件後的價格行為並研究價格回升的可能性。包含如果在檢測到的觀察值下進行交易，預期報酬率是多少？
 
 ## Methodology
-本程式碼使用"Rare Events Analysis for High‐Frequency Equity Data"中的方法，並使用APPLY公司近一年的股票資料進行高頻股票數據的罕見事件分析。\
+本程式碼使用"Rare Events Analysis for High‐Frequency Equity Data"論文中的方法，並使用APPLY公司近一年的股票資料進行高頻股票數據的罕見事件分析。\
 在價量曲線上，以一個固定視窗去分析出買進股票的時機點，當時機點發生在當價格急速下降的時候，再去分析買進的股票的報酬與時間的關係。
 
 ## Programming Environment
